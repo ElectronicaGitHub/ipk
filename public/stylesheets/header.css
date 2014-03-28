@@ -1,0 +1,30 @@
+header {
+	position: relative;
+	padding: 20px 0;
+	font-family: 'Open Sans', sans-serif;
+	height: 140px;
+	width: 100%;
+}
+.logo {
+
+}
+.logo p {
+
+}
+.logo p:nth-child(1) {
+	
+}
+.logo p:nth-child(2) {
+	
+}
+.logo p:nth-child(3) {
+
+}
+.tabs {
+	position: absolute;
+	bottom: 2px;
+	right: 0px;
+}
+.tabs div {
+	float: left;
+}

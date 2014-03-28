@@ -1,0 +1,25 @@
+{
+	"port" : 8080,
+	"db": {
+		"name" : "IPK"
+	},
+	"mongoose" :  {
+		"uri" : "mongodb://localhost/IPK",
+		"options" : {
+			"server" : {
+				"socketOptions" : {
+					"keepAive" : 1
+				}
+			}
+		}
+	},
+	"session" : {
+		"secret" : "ILoveNastyulechku",
+		"key" : "sid",
+		"cookie" : {
+			"path" : "/",
+			"httpOnly" : true,
+			"maxAge" : null
+		}
+	}
+}
