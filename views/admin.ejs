@@ -1,0 +1,41 @@
+<% layout('base.ejs') %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
+<script type="text/javascript" src="/javascripts/controllers/adminCtrl.js"></script>
+
+
+<div class="data-container" ng-controller="adminCtrl">
+	<div class="buttons-container">
+		<div ng-click="selectedAction='film'"
+			 ng-class="{selected: selectedAction==='film'}">Фильм
+		</div>
+		<div ng-click="selectedAction='event'"
+			 ng-class="{selected: selectedAction==='event'}">Новость
+		</div>
+	</div>	
+
+	<div class="main-block-container">
+		<div ng-if="selectedAction">
+			<div ng-repeat="(k,v) in fields">
+				<div ng-switch on="v">
+					<div class="form-group">
+						<label>{{ k }}</label>
+						<textarea class="form-control" 
+								  rows="5" 
+								  ng-model="data[k]" 
+								  ng-switch-when="textarea">
+						</textarea>
+						<input class="form-control" 
+							   ng-model="data[k]" 
+							   ng-switch-when="input"/>
+					</div>
+				</div>
+			</div>
+			<div class="btn btn-primary"
+				 ng-if="selectedAction==='film'"
+		    	 ng-click="save(data, 'film')">Добавить фильм</div>
+		    <div class="btn btn-primary"
+		    	 ng-if="selectedAction==='event'"
+		    	 ng-click="save(data, 'event')">Добавить новость</div>
+		</div>
+	</div>
+</div>

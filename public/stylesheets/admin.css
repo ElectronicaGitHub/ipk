@@ -1,0 +1,46 @@
+body {
+	font-family: "Open Sans";
+}
+.data-container {
+	width: 100%;
+	padding: 10px 0;
+}
+.buttons-container div {
+	float: left;
+	width: 49%;
+	text-align: center;
+	height: 30px;
+	font-size: 25px;
+	background-color: rgba(189, 195, 199,.5);
+	line-height: 30px;
+	border-radius: 0;
+}
+.buttons-container div:first-child {
+	margin-right: 2%;
+}
+.buttons-container div:hover {
+	background-color: rgba(39, 174, 96,.4);
+}
+.main-block-container {
+	width: 100%;
+}
+.selected {
+	background-color: rgba(39, 174, 96, 1.0) !important;
+}
+input, textarea {
+	width: 49%;
+
+}
+label {
+	font-size: 20px;
+	padding-top: 5px;
+}
+.form-control {
+	border-radius: 0;
+	border-color: #ccc;
+}
+.form-control:focus {
+	border-color: #101010;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}

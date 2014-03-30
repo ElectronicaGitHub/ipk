@@ -1,0 +1,94 @@
+.content {
+	font-family: 'Open Sans', sans-serif;
+	min-height: 400px;
+	width: 100%;
+	margin-bottom: 100px;
+	padding: 5px;
+	overflow: hidden;
+}
+.last-event-container {
+	position: relative;
+	margin-bottom: 10px;
+	border-bottom: 15px solid rgba(41, 128, 185,.7);
+	-webkit-transition: all .4s ease;
+	     -o-transition: all .4s ease;
+	        transition: all .4s ease;
+}
+.last-event-container:hover {
+	border-bottom: 15px solid rgba(41, 128, 185,1.0)
+}
+.last-event-container .title {
+	font-weight: 800;
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+.last-event-container .text {
+	min-height: 50px;
+	font-size: 15px;
+	line-height: 20px;
+	padding-bottom: 10px;
+}
+.last-event-container .date {
+	position: absolute;
+	right: 1px;
+	bottom: 0px;
+	height: 20px;
+	font-weight: 600;
+}
+.film-container {
+	width: 100%;
+}
+.film {
+	float: left;
+	margin-bottom: 20px;
+	height: 430px;
+}
+.film .photo {
+	height: 300px;
+
+}
+.film .title {
+	font-size: 18px;
+	font-weight: 800;
+	height: 50px;
+	overflow: hidden;
+}
+.film .synopsis {
+	font-size: 15px;
+	height: 85px;
+	overflow: hidden;
+}
+
+.col-xs-12 {	
+	padding-right: 0;
+	padding-left: 0;
+}
+@media (min-width: 768px) {
+	.film:nth-child(even) {
+		padding-left: 5px
+	}
+	.film:nth-child(2n+1) {
+		padding-right: 5px
+	}
+}
+@media (min-width: 992px) {
+	.film:nth-child(3n+3) {
+		padding-left: 10px;
+		padding-right: 0px;
+	}
+	.film:nth-child(3n+2) {
+		padding-left: 5px;
+		padding-right: 0px;
+	}
+	.film:nth-child(3n+1) {
+		padding-left: 0px;
+		padding-right: 5px;
+	}
+}
+@media (min-width: 1200px) {
+	.film:nth-child(4n+4) {
+		padding-left: 10px;
+		padding-right: 0px;
+	} 
+}

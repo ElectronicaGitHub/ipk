@@ -1,18 +1,20 @@
 var mongoose = require('../libs/mongoose');
-
-
-
-var film = mongoose.Schema;
+Schema = mongoose.Schema;
 
 var Film = new Schema({
-	_id : {
-		type: String,
-		unique : true	
-	},
 	title : {
 		type : String
 	},
 	synopsis : {
+		type : String
+	},
+	film_url : {
+		type: String
+	},
+	type : {
+		type: String
+	},
+	picture_url : {
 		type : String
 	},
 	post_date : {

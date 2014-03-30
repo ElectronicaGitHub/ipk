@@ -2,11 +2,10 @@ var mongoose = require('../libs/mongoose');
 Schema = mongoose.Schema;
 
 var Event = new Schema({
-	_id: {
-		type: String,
-		unique: true
-	},
 	title: {
+		type: String
+	},
+	description : {
 		type: String
 	},
 	text: {
