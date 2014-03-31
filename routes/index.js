@@ -9,7 +9,12 @@ module.exports = function(app) {
 	// главная страница
 	app.get('/', function (req,res,err) {
 		res.render('index');
+	});
+
+	app.get('/films', function (req ,res, err) {
+		res.render('films');
 	})
+
 
 	app.get('/admin', function (req, res, err) {
 		res.render('admin');
