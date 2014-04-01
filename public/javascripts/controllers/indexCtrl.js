@@ -1,6 +1,7 @@
 app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 
 	$scope.init = function() {
+		$scope.last_new = {};
 		$scope.getLastNew();
 		$scope.getFilms();
 	}
@@ -10,6 +11,7 @@ app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 		$http.get(url)
 			.success(function (data) {
 				$scope.films = data;
+				console.log('$scope.films = ', $scope.films);
 			})
 			.error(function (data) {
 				console.log(data)
@@ -21,6 +23,7 @@ app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 		$http.get(url)
 			.success(function (data) {
 				$scope.last_new = data;
+				console.log('$scope.last_new = ', $scope.last_new);
 			})
 			.error(function (data) {
 				console.log(data)

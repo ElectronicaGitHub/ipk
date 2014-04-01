@@ -1,1 +1,9 @@
 <%- layout('base.ejs') %>
+<script type="text/javascript" src="/javascripts/controllers/filmsCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/films.css">
+
+<div class="content" ng-controller="filmsCtrl" ng-init="init()">
+
+	<div class="film" ng-repeat="film in films"></div>
+</div>
+

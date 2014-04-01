@@ -17,6 +17,12 @@ var Film = new Schema({
 	picture_url : {
 		type : String
 	},
+	year : {
+		type: String
+	},
+	time : {
+		type: String
+	},
 	post_date : {
 		type : Date,
 		default: Date.now

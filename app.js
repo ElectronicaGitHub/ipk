@@ -11,6 +11,8 @@ var mongoose = require('./libs/mongoose');
 var log = require('./libs/log')(module);
 
 var app = express();
+var passport = require('passport');
+require('./routes/passportvk');
 
 function openConnection(cb) {
     mongoose.connection.on('open', function () {
@@ -21,6 +23,10 @@ function openConnection(cb) {
 openConnection();
 
 // view engine setup
+process.env.NODE_ENV = 'production';
+process.on('uncaughtException', function (error) {
+   console.log('uncaughtException = ', error.stack);
+});
 app.engine('ejs', require('ejs-locals'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -39,6 +45,8 @@ app.use(express.session( {
     cookie : config.get('session:cookie'),
     store: new MongoStore({mongoose_connection : mongoose.connection})
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));

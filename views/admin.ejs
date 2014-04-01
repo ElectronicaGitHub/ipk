@@ -2,6 +2,10 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
 <script type="text/javascript" src="/javascripts/controllers/adminCtrl.js"></script>
 
+<script type="text/javascript">
+	window.data = <%-JSON.stringify(data)%>;
+</script>
+
 
 <div class="data-container" ng-controller="adminCtrl">
 	<div class="buttons-container">
@@ -11,6 +15,8 @@
 		<div ng-click="selectedAction='event'"
 			 ng-class="{selected: selectedAction==='event'}">Новость
 		</div>
+		<div ng-click="goToAll()">Показать все</div>
+
 	</div>	
 
 	<div class="main-block-container">
@@ -31,11 +37,18 @@
 				</div>
 			</div>
 			<div class="btn btn-primary"
-				 ng-if="selectedAction==='film'"
+				 ng-if="selectedAction==='film' && !updateFilm"
 		    	 ng-click="save(data, 'film')">Добавить фильм</div>
 		    <div class="btn btn-primary"
-		    	 ng-if="selectedAction==='event'"
+		    	 ng-if="selectedAction==='event' && !updateEvent"
 		    	 ng-click="save(data, 'event')">Добавить новость</div>
+
+		    <div class="btn btn-primary"
+				 ng-if="selectedAction==='film' && updateFilm"
+		    	 ng-click="update(data, 'film')">Отредактировать фильм</div>
+		    <div class="btn btn-primary"
+		    	 ng-if="selectedAction==='event' && updateEvent"
+		    	 ng-click="update(data, 'event')">Отредактировать новость</div>
 		</div>
 	</div>
 </div>

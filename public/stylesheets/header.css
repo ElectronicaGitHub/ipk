@@ -8,9 +8,9 @@ header {
 .logo p {
 	letter-spacing: -.1ex;
 	margin-bottom: 0px;
-	-webkit-transition: all .5s ease;
-	     -o-transition: all .5s ease;
-	        transition: all .5s ease;
+	-webkit-transition: color .5s ease;
+	     -o-transition: color .5s ease;
+	        transition: color .5s ease;
 }
 .logo p:nth-child(1) {
 	font-size: 81px;
@@ -52,9 +52,9 @@ header {
 	bottom: 0px;
 	border-bottom: 4px solid transparent;
 	cursor: pointer;
-	-webkit-transition: all .4s ease;
-	     -o-transition: all .4s ease;
-	        transition: all .4s ease;
+	-webkit-transition: border-bottom .4s ease, bottom .3s ease;
+	     -o-transition: border-bottom .4s ease, bottom .3s ease;
+	        transition: border-bottom .4s ease, bottom .3s ease;
 }
 .tabs div:hover {
 	color: rgba(52, 152, 219,1);

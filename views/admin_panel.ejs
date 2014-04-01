@@ -1,0 +1,67 @@
+<%- layout('base.ejs')%>
+<script type="text/javascript" src="/javascripts/controllers/adminListCtrl.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
+
+<div ng-controller="adminListCtrl" ng-init="init()">
+	<div class="buttons-container">
+		<div ng-click="selectedAction='film'"
+			 ng-class="{selected: selectedAction==='film'}">Фильмы
+		</div>
+		<div ng-click="selectedAction='event'"
+			 ng-class="{selected: selectedAction==='event'}">Новости
+		</div>
+		<div ng-click="goToAdd()">Добавить</div>
+	</div>	
+
+	<table class="table col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="selectedAction==='event'">
+		<thead>
+			<tr>
+				<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Заголовок</th>
+				<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Описание</th>
+				<th class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Текст</th>
+				<th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Действия</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="event in events">
+				<td class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-bind="event.title"></td>
+				<td class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-bond="event.description"></td>
+				<td class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-bind="event.text"></td>
+				<td class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<button class="btn btn-primary fa fa-refresh" ng-click="update(event, 'event')"></button>
+					<button class="btn btn-danger fa fa-trash-o" ng-click="delete(event, 'event')"></button>
+				</td>
+			</tr>	
+		</tbody>	
+	</table>
+
+	<table class="table col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="selectedAction==='film'">
+		<thead>
+			<tr>
+				<th>Название</th>
+				<th>Синопсис</th>
+				<th>Тип</th>
+				<th>Ссылка на фильм</th>
+				<th>Ссылка на картинку</th>
+				<th>Год</th>
+				<th>Время</th>
+				<th>Действия</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="film in films">
+				<td ng-bind="film.title"></td>
+				<td ng-bind="film.synopsis"></td>
+				<td bg-bind="film.type"></td>
+				<td ng-bind="film.film_url"></td>
+				<td class="picture"><img src="{{film.picture_url}}"></td>
+				<td ng-bind="film.year"></td>
+				<td ng-bind="film.time"></td>
+				<td>
+					<button class="btn btn-primary fa fa-refresh" ng-click="update(film, 'film')"></button>
+					<button class="btn btn-danger fa fa-trash-o" ng-click="delete(film, 'film')"></button>
+				</td>
+			</tr>	
+		</tbody>	
+	</table>
+</div>

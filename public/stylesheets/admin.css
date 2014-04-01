@@ -7,16 +7,18 @@ body {
 }
 .buttons-container div {
 	float: left;
-	width: 49%;
+	width: 31.333%;
 	text-align: center;
 	height: 30px;
+	font-weight: bold;
+	margin-right: 3%;
 	font-size: 25px;
 	background-color: rgba(189, 195, 199,.5);
-	line-height: 30px;
+	line-height: 25px;
 	border-radius: 0;
 }
-.buttons-container div:first-child {
-	margin-right: 2%;
+.buttons-container div:last-child {
+	margin-right: 0;
 }
 .buttons-container div:hover {
 	background-color: rgba(39, 174, 96,.4);
@@ -43,4 +45,11 @@ label {
 	border-color: #101010;
 	box-shadow: none;
 	-webkit-box-shadow: none;
+}
+table {
+	font-size: 12px;
+	font-weight: normal;
+}
+table tbody td.picture img {
+	width: 100px;
 }

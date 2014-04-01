@@ -46,7 +46,7 @@
 }
 .film .photo {
 	height: 300px;
-
+	background-size: cover;
 }
 .film .title {
 	font-size: 18px;
