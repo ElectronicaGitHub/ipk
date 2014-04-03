@@ -8,6 +8,7 @@ header {
 .logo p {
 	letter-spacing: -.1ex;
 	margin-bottom: 0px;
+	font-weight: 800;
 	-webkit-transition: color .5s ease;
 	     -o-transition: color .5s ease;
 	        transition: color .5s ease;
@@ -16,19 +17,16 @@ header {
 	font-size: 81px;
 	height: 65px;
 	line-height: 60px;
-	font-weight: 800;
 }
 .logo p:nth-child(2) {
 	font-size: 70px;
 	height: 56px;
 	line-height: 50px;
-	font-weight: 800;
 }
 .logo p:nth-child(3) {
 	font-size: 45px;
 	height: 35px;
 	line-height: 32px;
-	font-weight: 800;
 }
 .logo p:nth-child(1):hover {
 	color: rgba(46, 204, 113,1.0)
@@ -73,6 +71,38 @@ header {
 	cursor: pointer;
 }
 
+@media (max-width: 768px) {
+	header {
+		height: 85px;
+	}
+	.tabs {
+		display: none;
+	}
+	.contact {
+		font-size: 11px;
+		top: 10px;
+	}
+	.tabs div {
+		font-size: 15px;
+		margin: 0 4px;
+		font-weight: 600
+	}
+	.logo p:nth-child(1) {
+		font-size: 41px;
+		height: 35px;
+		line-height: 35px;
+	}
+	.logo p:nth-child(2) {
+		font-size: 36px;
+		height: 27px;
+		line-height: 26px;
+	}
+	.logo p:nth-child(3) {
+		font-size: 23px;
+		height: 21px;
+		line-height: 20px;
+	}
+}
 @media (min-width: 768px) {
 	.tabs div {
 		margin: 0 5px;

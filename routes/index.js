@@ -148,23 +148,4 @@ module.exports = function(app) {
 			})
 		}
 	})
-
-	// vk auth
-	app.get('/auth/vkontakte', passport.authenticate('vkontakte'), function(req, res) {});
-	app.get('/auth/vkontakte/callback', passport.authenticate('vkontakte', {
-        failureRedirect: '/login'
-    }),
-    function (req, res) {
-        res.redirect('/');
-    });
-    app.get('/logout', function (req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-    function ensureAuthenticated(req, res, next) {
-        if (req.isAuthenticated()) {
-            return next();
-        }
-        res.redirect('/login')
-    };
 }

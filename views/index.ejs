@@ -5,8 +5,11 @@
 
 <div class="content" ng-controller="indexCtrl" ng-init="init()">
 	<div class="last-event-container" ng-if="last_new">
-		<div class="title" ng-bind="last_new.title"></div>
-		<div class="text" ng-bind="last_new.description"></div>
+		<div class="fa fa-bullhorn"></div>
+		<div>
+			<div class="title" ng-bind="last_new.title"></div>
+			<div class="text" ng-bind="last_new.description"></div>
+		</div>
 		<!-- <div class="date">Опубликовано: 28.11.1989</div> -->
 	</div>
 	<div class="films-container">

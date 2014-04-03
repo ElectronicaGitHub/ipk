@@ -23,6 +23,9 @@ var Film = new Schema({
 	time : {
 		type: String
 	},
+	genre : {
+		type: String
+	},
 	post_date : {
 		type : Date,
 		default: Date.now

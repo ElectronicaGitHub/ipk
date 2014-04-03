@@ -1,9 +1,12 @@
-app.controller('filmsCtrl', ['$scope', '$http', function ($scope, $http) {
+app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
 	console.log($scope)
 
 	$scope.init = function() {
 		$scope.getFilms();
 	}
+	$scope.frameSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
 
 	$scope.getFilms = function() {
 		url = '/films/all';

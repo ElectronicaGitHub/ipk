@@ -9,7 +9,7 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 	});
 
 	$scope.data = {};
-	$scope.fields = {};
+	$scope.fields = [];
 	$scope.update = false;
 	$scope.updateFilm = false;
 	$scope.updateEvent = false;
@@ -31,20 +31,28 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 	console.log('$scope.updateEvent = ', $scope.updateEvent)
 	console.log('$scope.updateFilm = ', $scope.updateFilm)
 	
-	$scope.filmFields = {
-		'picture_url': 'input',
-		'film_url' : 'input',
-		'synopsis' : 'textarea',
-		'title' : 'input',
-		'year' : 'input',
-		'time' : 'input'
-	};
-
-	$scope.eventFields = {
-		'text': 'textarea',
-		'description': 'textarea',
-		'title': 'input'
-	};
+	$scope.filmFields = [
+		['title', 'input', 'Заголовок'],
+		['synopsis', 'textarea', 'Синопсис'],
+		['genre', 'select', 'Жанр'],	
+		['picture_url','input', 'Ссылка на картинку'],
+		['film_url', 'input', 'Ссылка на фильм'],
+		['year', 'input', 'Год выпуска( пример: 2014 , без г.,год., и тд.)'],
+		['time', 'input', 'Продолжительность( пример: 38 мин.)']
+	];
+	$scope.eventFields = [
+		['title', 'input', 'Заголовок'],
+		['description', 'textarea', 'Описание (неочень большое)'],
+		['text', 'textarea', 'Текст']
+	];
+	$scope.selectOptions = {
+		'documental' : 'Документальный',
+		'animation' : 'Анимационный',
+		'artistic' : 'Художественный',
+		'series' : 'Телесериал',
+		'advertise' : 'Рекламный ролик',
+		'science' : 'Научно-популярные' 
+	}
 
 	$scope.save = function(data, type) {
 		console.log(data);

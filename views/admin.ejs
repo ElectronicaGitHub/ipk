@@ -21,18 +21,22 @@
 
 	<div class="main-block-container">
 		<div ng-if="selectedAction">
-			<div ng-repeat="(k,v) in fields">
-				<div ng-switch on="v">
+			<div ng-repeat="field in fields">
+				<div ng-switch on="field.1">
 					<div class="form-group">
-						<label>{{ k }}</label>
+						<label>{{ field.2 }}</label>
 						<textarea class="form-control" 
 								  rows="5" 
-								  ng-model="data[k]" 
+								  ng-model="data[field.0]" 
 								  ng-switch-when="textarea">
 						</textarea>
 						<input class="form-control" 
 							   ng-model="data[k]" 
 							   ng-switch-when="input"/>
+						<select class="form-control"
+								ng-model="data[field.0]"
+								ng-options="k as v for (k,v) in selectOptions"
+								ng-switch-when="select"></select>
 					</div>
 				</div>
 			</div>
