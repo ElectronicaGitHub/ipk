@@ -76,7 +76,7 @@
 .film .photo {
 	height: 300px;
 	background-size: cover;
-	/*background-size: */
+	background-position: center; 
 
 }
 .film .title {

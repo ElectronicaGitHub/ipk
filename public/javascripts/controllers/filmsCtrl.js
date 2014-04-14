@@ -1,6 +1,15 @@
 app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
 	console.log($scope)
 
+	$scope.selectOptions = {
+		'documental' : 'Документальный',
+		'animation' : 'Анимационный',
+		'artistic' : 'Художественный',
+		'series' : 'Телесериал',
+		'advertise' : 'Рекламный ролик',
+		'science' : 'Научно-популярные' 
+	}
+
 	$scope.init = function() {
 		$scope.getFilms();
 	}

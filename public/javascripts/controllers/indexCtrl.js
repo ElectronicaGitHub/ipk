@@ -6,6 +6,15 @@ app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 		$scope.getFilms();
 	}
 
+	$scope.selectOptions = {
+		'documental' : 'Документальный',
+		'animation' : 'Анимационный',
+		'artistic' : 'Художественный',
+		'series' : 'Телесериал',
+		'advertise' : 'Рекламный ролик',
+		'science' : 'Научно-популярные' 
+	}
+
 	$scope.getFilms = function() {
 		url = '/films/all';
 		$http.get(url)
