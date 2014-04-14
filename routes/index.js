@@ -21,6 +21,12 @@ module.exports = function(app) {
 		res.render('films');
 	});
 
+	app.get('/services', function (req ,res, err) {
+		res.render('services');
+	});
+
+
+
 	app.get('/admin', function (req, res, next) {
 		var data = {};
 		var el = {};

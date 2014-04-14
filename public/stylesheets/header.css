@@ -71,6 +71,7 @@ header {
 	cursor: pointer;
 }
 
+
 @media (max-width: 768px) {
 	header {
 		height: 85px;
@@ -120,4 +121,38 @@ header {
 		margin: 0 15px;
 		font-size: 30px;
 	}
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+	.tabs {
+		display: block;
+	}
+	.logo p:nth-child(1) {
+		font-size: 81px;
+		height: 65px;
+		line-height: 60px;
+	}
+	.logo p:nth-child(2) {
+		font-size: 70px;
+		height: 56px;
+		line-height: 50px;
+	}
+	.logo p:nth-child(3) {
+		font-size: 45px;
+		height: 35px;
+		line-height: 32px;
+	}
+	header {
+		height: 155px;
+	}
+	.contact {
+		font-size: 30px;
+		top: 20px;
+	}
+	.tabs div {
+		margin: 0 3px;
+		font-size: 16px;
+	}
+
 }

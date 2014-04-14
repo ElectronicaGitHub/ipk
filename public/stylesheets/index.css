@@ -9,14 +9,14 @@
 .last-event-container {
 	position: relative;
 	margin-bottom: 10px;
-	border-bottom: 15px solid rgba(41, 128, 185,.7);
+	border-bottom: 3px solid rgba(41, 128, 185,.7);
 	overflow: hidden;
 	-webkit-transition: all .4s ease;
 	     -o-transition: all .4s ease;
 	        transition: all .4s ease;
 }
 .last-event-container:hover {
-	border-bottom: 15px solid rgba(41, 128, 185,1.0)
+	border-bottom: 3px solid rgba(41, 128, 185,1.0)
 }
 .last-event-container > div {
 	float: left;
@@ -59,24 +59,39 @@
 }
 .film {
 	float: left;
-	margin-bottom: 20px;
-	height: 430px;
+	margin-bottom: 10px;
+	/*height: 450px;*/
 }
+.film-inner {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	/*padding: 5px;*/
+	background-color: rgba(52, 152, 219,.3);
+	width: 100%;
+	/*height: 100%;*/
+	box-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
 .film .photo {
 	height: 300px;
 	background-size: cover;
+
 }
 .film .title {
 	font-size: 18px;
 	font-weight: 800;
 	height: 50px;
+	text-align: center;
 	overflow: hidden;
+	padding: 0 5px;
 }
 .film .synopsis {
 	font-size: 15px;
 	height: 85px;
 	overflow: hidden;
 	line-height: 17px;
+	padding: 0 5px;
 }
 
 .col-xs-12 {	
@@ -119,7 +134,7 @@
 		padding-right: 0px;
 	} 
 	.film {
-		height: 400px;
+		/*height: 400px;*/
 	}
 	.film .photo {
 		height: 260px;

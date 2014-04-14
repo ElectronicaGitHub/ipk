@@ -1,0 +1,18 @@
+.animate-film.ng-move,
+.animate-film.ng-enter,
+.animate-film.ng-leave {
+    -webkit-transition:all linear 0.6s;
+    transition:all linear 0.6s;
+}
+
+.animate-film.ng-leave.ng-leave-active,
+.animate-film.ng-move,
+.animate-film.ng-enter {
+    opacity:0;
+}
+
+.animate-film.ng-leave,
+.animate-film.ng-move.ng-move-active,
+.animate-film.ng-enter.ng-enter-active {
+    opacity:1;
+}
