@@ -1,7 +1,80 @@
 <%- layout('base.ejs') %>
 <% block('title', '<title>Услуги / Искусство продвижения кино</title>') -%>
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/\'">Главная</div>' +
+'<div onClick="javascript:window.location.href=\'/films\'">Фильмы</div>' + 
+'<div onClick="javascript:window.location.href=\'/news\'">Новости</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>' +
+'<div onClick="javascript:window.location.href=\'/contacts\'">Контакты</div>') -%>
 
+<link rel="stylesheet" type="text/css" href="/stylesheets/about-contacts.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/services.css">
+
+<legend>Наша компания предоставляет следующий ряд услуг</legend>
+
+<div class="elem">
+	<div class="icon"> <span class="fa fa-film"></span></div>
+	<div class="text" ><span>Производство художественных игровых и документальных фильмов, телесериалов, короткометражных, корпоративных фильмов.</span></div>
+</div>
+<div class="elem">
+	<div class="icon"> <span class="fa fa-microphone"></span>
+	</div>
+	<div class="text" ><span>Производство рекламных роликов и видеоклипов.</span></div>
+</div>
+<div class="elem">
+	<div class="icon"> <span class="fa fa-book"></span>
+	</div>
+	<div class="text" ><span>Мы принимаем заявки на написание игровых, документальных, презентационных, рекламных фильмов, телесериалов.</span></div>
+</div>
+<div class="elem">
+	<div class="icon"> <span class="fa fa-users"></span>
+	</div>
+	<div class="text" ><span>Подбор профессиональных кадров для производства фильмов.</span></div>
+</div>
+<div class="elem">
+	<div class="icon"> <span class="fa fa-money"></span>
+	</div>
+	<div class="text"><span>Разработка бизнес плана для инвесторов</span></div>
+</div>
+
+<style type="text/css">
+	.icon, .text {
+		position: absolute;
+		height: 100%;
+		display: table;
+	}
+	.icon {
+		left: 5px;
+		width: 40px;
+		text-align: center;
+	}
+	.icon span {
+		font-size: 25px;
+	}
+	.icon span, .text span {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.text {
+		left: 45px;
+		right: 5px;
+		width: 90%;
+	}
+	.elem {
+		position: relative;
+		height: 40px;
+		margin-bottom: 5px;
+		-webkit-transition: all .5s;
+		   -moz-transition: all .5s;
+		        transition: all .5s;
+		border: 1px dashed #fff;
+		
+	}
+	.elem:hover {
+		background-color: #f5f5f5;
+		border: 1px dashed #e5e5e5;
+	}
+</style>
 
 
 

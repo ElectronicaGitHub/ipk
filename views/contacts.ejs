@@ -1,0 +1,48 @@
+<%- layout('base.ejs') %>
+<% block('title', '<title>Контакты / Искусство продвижения кино</title>') -%>
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/\'">Главная</div>' + 
+'<div onClick="javascript:window.location.href=\'/films\'">Фильмы</div>' + 
+'<div onClick="javascript:window.location.href=\'/services\'">Услуги</div>' +
+'<div onClick="javascript:window.location.href=\'/news\'">Новости</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>') -%>
+
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru_RU" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/about-contacts.css">
+
+<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map ("map", {
+            center: [55.777343,37.677652],
+            zoom: 15,
+  			behaviors: ['scrollZoom']
+        });
+         myPlacemark = new ymaps.Placemark([55.777343,37.677652], { 
+            hintContent: '<img src="http://cs617424.vk.me/v617424626/7626/fEM1-pwX1g8.jpg" width=\'292px\' height=\'168px\'>'
+        });
+        myMap.controls.add(new ymaps.control.MapTools());
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>
+
+<div class="side margin col-xs-6 col-sm-5 col-md-4 col-lg-3">
+	<div class="tops">
+		<p class="name">Адрес:</p>
+		<p class="type">105120, Москва, Спартаковская, д. 10, стр. 12</p>
+	</div>
+	<div class="tops">
+		<p class="name">Телефоны:</p>
+		<p class="type">+7(495)-660-15-09</p>
+		<p class="type">+7(495)-665-48-37</p>
+	</div>
+	<div class="tops">
+		<p class="name">Электронная почта</p>
+		<p class="type">ipk@galeria.ru</p>
+	</div>
+</div>
+<div class="margin col-xs-6 col-sm-7 col-md-8 col-lg-9">
+	<div id="map" style="width: 100%; height: 400px"></div>
+</div>

@@ -1,5 +1,12 @@
 <%- layout('base.ejs') %>
 <% block('title', '<title>Фильмы / Искусство продвижения кино</title>') -%>
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/\'">Главная</div>' + 
+'<div onClick="javascript:window.location.href=\'/services\'">Услуги</div>' +
+'<div onClick="javascript:window.location.href=\'/news\'">Новости</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>' +
+'<div onClick="javascript:window.location.href=\'/contacts\'">Контакты</div>') -%>
+
 <script type="text/javascript" src="/javascripts/controllers/filmsCtrl.js"></script>
 <link rel="stylesheet" type="text/css" href="/stylesheets/films.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
@@ -16,7 +23,7 @@
 			<div  class="title" ng-bind="film.title"></div>
 			<div class="genre">Жанр: {{ selectOptions[film.genre] }}</div>
 			<span class="time" >Продолжительность: {{film.time }} </span>
-			<span class="year" >Год выпуска: {{film.year }} </span>
+			<!-- <span class="year" >Год выпуска: {{film.year }} </span> -->
 			<div  class="synopsis" ng-bind="film.synopsis"></div>
 
 		</div>

@@ -1,9 +1,15 @@
 <% layout('base.ejs') %>
+<% block('title', '<title>Главная / Искусство продвижения кино</title>') -%>
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/films\'">Фильмы</div>' + 
+'<div onClick="javascript:window.location.href=\'/services\'">Услуги</div>' +
+'<div onClick="javascript:window.location.href=\'/news\'">Новости</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>' +
+'<div onClick="javascript:window.location.href=\'/contacts\'">Контакты</div>') -%>
+
 <script type="text/javascript" src="/javascripts/controllers/indexCtrl.js"></script>
 <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
 <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
-
-
 
 <div class="content" ng-controller="indexCtrl" ng-init="init()">
 	<div class="last-event-container" ng-if="last_new">
@@ -19,8 +25,10 @@
 			<div class="film-inner">
 				<div class="photo" 
 					 style="background-image:url('{{ film.picture_url}}')"></div>
-				<!-- <div class="title" ng-bind="film.title"></div> -->
-				<!-- <div class="synopsis" ng-bind="film.synopsis"></div> -->
+				<div class="title">
+					<div class="border5"></div>
+					{{ film.title }}
+				</div>
 			</div>
 		</div>
 	</div>

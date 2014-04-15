@@ -37,7 +37,7 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 		['genre', 'select', 'Жанр'],	
 		['picture_url','input', 'Ссылка на картинку'],
 		['film_url', 'input', 'Ссылка на фильм'],
-		['year', 'input', 'Год выпуска( пример: 2014 , без г.,год., и тд.)'],
+		// ['year', 'input', 'Год выпуска( пример: 2014 , без г.,год., и тд.)'],
 		['time', 'input', 'Продолжительность( пример: 38 мин.)']
 	];
 	$scope.eventFields = [

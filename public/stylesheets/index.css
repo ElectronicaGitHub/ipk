@@ -70,6 +70,7 @@
 	background-color: rgba(52, 152, 219,.3);
 	width: 100%;
 	/*height: 100%;*/
+	position: relative;
 	box-shadow: 0 2px 5px rgba(0,0,0,.5);
 }
 
@@ -80,12 +81,36 @@
 
 }
 .film .title {
-	font-size: 18px;
+	font-size: 15px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0px;
+	color: rgba(255,255,255,0.7);
+	text-align: right;
+	background-color: rgba(0,0,0,.7);
 	font-weight: 800;
-	height: 50px;
-	text-align: center;
-	overflow: hidden;
-	padding: 0 5px;
+	padding: 5px;
+	-webkit-transition: all .4s ease;
+	     -o-transition: all .4s ease;
+	        transition: all .4s ease;
+}
+.border5 {
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background-color: transparent;
+	-webkit-transition: all .4s ease;
+	     -o-transition: all .4s ease;
+	        transition: all .4s ease;
+}
+.film:hover .border5 {
+	background-color: #e74c3c;	
+}
+.film:hover .title {
+	color: rgba(255,255,255,1);
 }
 .film .synopsis {
 	font-size: 15px;

@@ -25,7 +25,13 @@ module.exports = function(app) {
 		res.render('services');
 	});
 
+	app.get('/company', function (req ,res, err) {
+		res.render('about');
+	});
 
+	app.get('/contacts', function (req ,res, err) {
+		res.render('contacts');
+	});
 
 	app.get('/admin', function (req, res, next) {
 		var data = {};

@@ -1,0 +1,30 @@
+* {
+	font-family: "Open Sans"
+}
+legend {
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 600;
+	padding-bottom: 5px;
+}
+.side {
+	background-color: #f5f5f5;
+}
+.name, .type {
+	margin: 0;
+}
+.tops {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+}
+.name {
+	font-weight: 800;
+	font-size: 16px;
+}
+.type {
+	font-size: 14px;
+}
+.margin {
+	margin-bottom:50px;
+}
