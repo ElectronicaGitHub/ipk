@@ -1,0 +1,44 @@
+<% layout('base.ejs') %>
+<% block('title', '<title>' + film.title + ' / Искусство продвижения кино</title>') -%>
+<link rel="stylesheet" type="text/css" href="/stylesheets/film_detail.css">
+
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/films\'">Фильмы</div>' + 
+'<div onClick="javascript:window.location.href=\'/services\'">Услуги</div>' +
+'<div onClick="javascript:window.location.href=\'/news\'">Новости</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>' +
+'<div onClick="javascript:window.location.href=\'/contacts\'">Контакты</div>') -%>
+ 
+<script type="text/javascript">
+window.film = <%-JSON.stringify(film)%>;
+ </script>
+
+ <script type="text/javascript">
+app.controller('filmEachCtrl', ['$scope', function ($scope) {
+	$scope.film = window.film;
+	$scope.filmLabels = {
+		'documental' : 'Документальный',
+		'animation' : 'Анимационный',
+		'artistic' : 'Художественный',
+		'series' : 'Телесериал',
+		'advertise' : 'Рекламный ролик',
+		'science' : 'Научно-популярные' 
+	}
+}])
+
+ </script>
+<div class="cnt" ng-controller="filmEachCtrl">
+	<p class="title"><%-film.title%></p>
+	<div class="video-cnt">
+	 	<iframe src="<%-film.film_url%>" width="100%" height="100%" frameborder allowfullscreen></iframe>
+	</div>
+	<div class="btm-cnt">
+		<div class="col-xs-5 col-sm-5 col-md-4 col-lg-3">
+			<p class="time">Продолжительность: <%-film.time%></p>
+			<p class="genre">Жанр: {{ filmLabels[film.genre] }}</p>
+		</div>
+		<div class="col-xs-7 col-sm-7 col-md-8 col-lg-9">
+			<p class="synopsis"><%-film.synopsis%></p>
+		</div>
+	</div>
+</div>

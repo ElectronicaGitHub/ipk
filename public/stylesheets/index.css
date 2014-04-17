@@ -9,14 +9,16 @@
 .last-event-container {
 	position: relative;
 	margin-bottom: 10px;
-	border-bottom: 3px solid rgba(41, 128, 185,.7);
+	padding: 5px;
+	border: 1px dashed #e5e5e5;
 	overflow: hidden;
 	-webkit-transition: all .4s ease;
 	     -o-transition: all .4s ease;
 	        transition: all .4s ease;
 }
 .last-event-container:hover {
-	border-bottom: 3px solid rgba(41, 128, 185,1.0)
+	background-color: rgba(52, 152, 219,.1);
+	border: 1px dashed #c5c5c5;
 }
 .last-event-container > div {
 	float: left;
@@ -131,6 +133,9 @@
 	.film:nth-child(2n+1) {
 		padding-right: 5px
 	}
+	.last-event-container > div:first-child {
+		font-size: 80px;
+	}
 }
 @media (min-width: 992px) {
 	.film:nth-child(3n+3) {
@@ -144,6 +149,9 @@
 	.film:nth-child(3n+1) {
 		padding-left: 0px;
 		padding-right: 5px;
+	}
+	.last-event-container > div:first-child {
+		font-size: 100px;
 	}
 }
 @media (min-width: 1200px) {
@@ -164,5 +172,8 @@
 	}
 	.film .photo {
 		height: 260px;
+	}
+	.last-event-container > div:first-child {
+		font-size: 110px;
 	}
 }

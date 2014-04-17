@@ -23,12 +23,14 @@
 	<div class="films-container">
 		<div class="animate-film film col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="film in films">
 			<div class="film-inner">
-				<div class="photo" 
-					 style="background-image:url('{{ film.picture_url}}')"></div>
-				<div class="title">
-					<div class="border5"></div>
-					{{ film.title }}
-				</div>
+				<a href="/film/{{film._id}}">
+					<div class="photo" 
+						 style="background-image:url('{{ film.picture_url}}')"></div>
+					<div class="title">
+						<div class="border5"></div>
+						{{ film.title }}
+					</div>
+				</a>
 			</div>
 		</div>
 	</div>

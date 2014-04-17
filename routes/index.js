@@ -33,6 +33,13 @@ module.exports = function(app) {
 		res.render('contacts');
 	});
 
+	app.get('/film/:id', function (req, res, err) {
+		id = req.params.id;
+		Film.findOne({_id : id}, function (err, result) {
+			res.render('film_detail', { film :  result})
+		})
+	})
+
 	app.get('/admin', function (req, res, next) {
 		var data = {};
 		var el = {};
@@ -40,7 +47,7 @@ module.exports = function(app) {
 			if (req.query.type==='film') {
 				el = Film.find({_id : req.query.id })
 				data = {
-					type	 : 'film'
+					type : 'film'
 				};
 			};
 			if (req.query.type==='event') {
@@ -53,6 +60,7 @@ module.exports = function(app) {
 				el.exec(function(err, result) {
 					if (err) return next(err);
 					data.data = result[0];
+					console.log('data.data', data.data)
 					console.log('data = ', data);
 					res.render('admin', {data : data});
 					
@@ -134,7 +142,7 @@ module.exports = function(app) {
 				res.send('OK');
 			})
 		} else {
-			Event.update({_id: req.body._id}, commonData, { multi: false}, function (err, numberAffected, raw) {
+			Event.update({_id: id}, commonData, { multi: false}, function (err, numberAffected, raw) {
 				if (err) return next(err);
 				console.log('Event updated');
 				console.log('The number of updated documents was %d', numberAffected);
