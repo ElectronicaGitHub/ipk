@@ -1,0 +1,77 @@
+<%- layout('base.ejs') %>
+<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-langs.js"></script>
+<script type="text/javascript">
+
+app.controller('eventsCtrl', ['$scope','$http', function ($scope, $http) {
+	url = '/events/all';
+	$http.get(url)
+		.success(function(data) {
+			console.log(data)
+			$scope.events = data;
+		})	
+		.error(function(data) {
+			console.log(data)
+		})
+
+	$scope.time_format = function(time) {
+		moment.lang('ru')
+		return moment(time).format('DD MMMM YYYY')
+	}
+}])
+	
+</script>
+
+<% block('title', '<title>Новости / Искусство продвижения кино</title>') -%>
+<% block('header_tabs', 
+'<div onClick="javascript:window.location.href=\'/\'">Главная</div>' +
+'<div onClick="javascript:window.location.href=\'/films\'">Фильмы</div>' + 
+'<div onClick="javascript:window.location.href=\'/services\'">Услуги</div>' +
+'<div onClick="javascript:window.location.href=\'/company\'">О компании</div>' +
+'<div onClick="javascript:window.location.href=\'/contacts\'">Контакты</div>') -%>
+
+<div class="main" ng-controller="eventsCtrl">
+	<div class="event-each" ng-repeat="event in events">
+		<p class="title">{{ event.title }}</p>
+		<p class="text">{{ event.text }}</p>
+		<p class="date">Дата: {{ time_format(event.post_date) }}</p>
+	</div>
+</div>
+
+<style type="text/css">
+	* {
+		font-family: "Open Sans";	
+	}
+	.main {
+		margin-bottom: 50px;
+	}
+	.event-each {
+		width: 100%;
+		display: inline-block;
+		clear: both;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background-color: rgba(41, 128, 185,.2);
+		box-shadow: 0 2px 5px rgba(0,0,0,.5);
+	}
+	.event-each .title {
+		background-color: rgba(41, 128, 185,1);
+		font-size: 25px;
+		font-weight: 800;
+		color: white;
+		text-shadow: 0 1px 4px rgba(0,0,0,.6);
+	}
+	.event-each .date {
+		font-weight: 600;
+		text-align: right;
+	} 
+	p {
+		padding: 0;
+	}
+	.title, .text, .date {
+		padding: 0px 10px;
+	}
+	.text {
+		font-size: 16px;
+	}
+
+</style>
