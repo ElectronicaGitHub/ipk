@@ -13,14 +13,8 @@
 .film > div {
 	height: 100%;
 }
-.film .iframe-container {
-	/*background-color: #a5a5a5*/
-}
 .film .info-container {
-	/*background-color: #e5e5e5;*/
-	/*background-color: rgba(52, 152, 219,.3);*/
-	background-color: rgba(149, 165, 166,.5);
-	padding: 5px 10px;
+	background-color: rgba(52, 152, 219,.2);
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -28,10 +22,14 @@
 .info-container .title , .film .title{
 	font-weight: 800;
 	overflow: hidden;
+	padding: 5px;
+	background-color: rgba(41, 128, 185,1.0);
+	color: white;
+	text-shadow: 0 2px 5px rgba(0,0,0,.6);
 }
 .info-container .synopsis {
 	font-size: 14px;
-	padding-top: 5px;
+	padding: 5px;
 	/*border-top: 1px solid #d5d5d5;*/
 	border-top: 1px solid rgba(44, 62, 80, .4);
 	margin-top: 5px;
@@ -42,9 +40,10 @@
 .info-container .year {
 	float: right;
 }
-.info-container .genre, .info-container .time, .info-container .year {
+.info-container .genre, .info-container .time {
 	font-size: 14px;
-	font-weight: 600
+	font-weight: 600;
+	padding: 2px 5px;
 }
 
 div[class*=col-xs],
@@ -53,40 +52,6 @@ div[class*=col-md],
 div[class*=col-lg] {
 	padding: 0px;
 }
-
-/*@media (max-width: 768px) {
-	.m {
-		display: block;
-	}
-	.film {
-		height: auto;
-		overflow: hidden;
-		box-shadow: 0 4px 10px rgba(0,0,0,.5);
-	}
-	.film .iframe-container {
-		height: 200px;
-	}
-	.info-container .title, .film .title {
-		font-size: 15px;
-		line-height: 20px;
-		height: auto;
-		background-color: #3498db;
-		color: white;
-		padding: 5px;
-	}
-	.info-container .genre, .info-container .time, .info-container .year {
-		font-size: 12px;
-	}
-	.info-container .synopsis {
-		font-size: 12px;
-		padding-top: 3px;
-		margin-top: 3px;
-		height: 108px;
-	}
-	.info-container {
-		display: none;
-	}
-}*/
 @media (min-width: 768px) {
 	.film {
 		height: 235px;
@@ -97,7 +62,7 @@ div[class*=col-lg] {
 	.info-container .title {
 		font-size: 18px;
 		line-height: 21px;
-		max-height: 42px;
+		/*max-height: 42px;*/
 	}
 	.info-container .synopsis {
 		font-size: 14px;
@@ -116,7 +81,7 @@ div[class*=col-lg] {
 	.info-container .title {
 		font-size: 20px;
 		line-height: 24px;
-		max-height: 48px;
+		/*max-height: 48px;*/
 	}
 	.info-container .synopsis {
 		font-size: 15px;
@@ -130,7 +95,7 @@ div[class*=col-lg] {
 	.info-container .title {
 		font-size: 25px;
 		line-height: 32px;
-		max-height: 64px;
+		/*max-height: 64px;*/
 	}
 	.info-container .genre, .info-container .time, .info-container .year {
 		font-size: 18px;

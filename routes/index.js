@@ -33,6 +33,11 @@ module.exports = function(app) {
 		res.render('contacts');
 	});
 
+	app.get('/news', function (req, res, err) {
+		res.render('newsline');
+		
+	});
+
 	app.get('/film/:id', function (req, res, err) {
 		id = req.params.id;
 		Film.findOne({_id : id}, function (err, result) {
