@@ -24,7 +24,7 @@
 			<div ng-show="film.genre" class="genre">Жанр: {{ selectOptions[film.genre] }}</div>
 			<span ng-show="film.time" class="time">Продолжительность: {{film.time }}</span>
 			<!-- <span class="year" >Год выпуска: {{film.year }} </span> -->
-			<div class="synopsis" ng-bind="film.synopsis"></div>
+			<div ng-show="film.synopsis" class="synopsis" ng-bind="film.synopsis"></div>
 
 		</div>
 
