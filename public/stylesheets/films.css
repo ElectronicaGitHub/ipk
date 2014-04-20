@@ -30,7 +30,6 @@
 .info-container .synopsis {
 	font-size: 14px;
 	padding: 5px;
-	/*border-top: 1px solid #d5d5d5;*/
 	border-top: 1px solid rgba(44, 62, 80, .4);
 	margin-top: 5px;
 	overflow: hidden;
