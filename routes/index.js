@@ -35,7 +35,7 @@ module.exports = function(app) {
 
 	app.get('/news', function (req, res, err) {
 		res.render('newsline');
-		
+
 	});
 
 	app.get('/film/:id', function (req, res, err) {
@@ -98,7 +98,7 @@ module.exports = function(app) {
 		});
 	})
 	app.get('/films/:type', function (req, res, next) {
-		var type = (req.params.type==='all') ? {} : {'type':req.params.type};
+		var type = (req.params.type==='all') ? {} : {'genre':req.params.type};
 		var films = Film.find(type, {}, { 
 			sort : { $natural:-1 } 
 		}).exec(function (err, result) {

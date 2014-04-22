@@ -1,6 +1,8 @@
 app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
 	console.log($scope)
 
+	$scope.selectedFilmType = 'all';
+
 	var width = $(window).width();
 	if (width > 753 && width < 977) {
 		$scope.cutNumber = 250;
@@ -13,7 +15,6 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
 	}
 
 	$(window).resize(function() {
-		console.log(';;')
 		a = $(this).width();
 		console.log(a)
 		if (a > 753 && a < 977) {
@@ -36,9 +37,17 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
 		'artistic' : 'Художественный',
 		'series' : 'Телесериал',
 		'advertise' : 'Рекламный ролик',
-		'science' : 'Научно-популярные' 
+		'science' : 'Научно-популярный' 
 	}
 
+	$scope.filmTypes = {
+		'documental' : 'Документальные',
+		'animation' : 'Анимационные',
+		'artistic' : 'Художественные',
+		'series' : 'Телесериалы',
+		'advertise' : 'Рекламные ролики',
+		'science' : 'Научно-популярные' 
+	}
 	$scope.init = function() {
 		$scope.getFilms();
 	}
@@ -47,7 +56,7 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
     }
 
 	$scope.getFilms = function() {
-		url = '/films/all';
+		url = '/films/' + $scope.selectedFilmType;
 		$http.get(url)
 			.success(function (data) {
 				$scope.films = data;
@@ -56,5 +65,9 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
 			.error(function (data) {
 				console.log(data)
 			})
+	}
+	$scope.setSelectedFilm = function(type) {
+		$scope.selectedFilmType = type;
+		$scope.getFilms();
 	}
 }])

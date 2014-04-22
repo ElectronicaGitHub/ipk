@@ -12,6 +12,15 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/animate.css">
 
 <div class="content" ng-controller="filmsCtrl" ng-init="init()">
+	<div class="film-type-tabs">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+			 ng-click="setSelectedFilm('all')" 
+			 ng-class="{ 'selected-film' : selectedFilmType==='all'}">Все фильмы</div>
+		<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2" 
+			 ng-click="setSelectedFilm(k)" 
+			 ng-repeat="(k,v) in filmTypes"
+			 ng-class="{ 'selected-film' : selectedFilmType===k}">{{ v }}</div>
+	</div>
 
 	<div class="film" 
 		 ng-repeat="film in films">
