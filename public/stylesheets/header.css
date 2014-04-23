@@ -49,6 +49,7 @@ header {
 	float: left;
 	position: relative;
 	bottom: 0px;
+	font-weight: 800;
 	border-bottom: 4px solid transparent;
 	cursor: pointer;
 	-webkit-transition: border-bottom .4s ease, bottom .3s ease;
@@ -108,19 +109,19 @@ header {
 @media (min-width: 768px) {
 	.tabs div {
 		margin: 0 5px;
-		font-size: 18px;
+		font-size: 13px;
 	}
 }
 @media (min-width: 992px) {
 	.tabs div {
-		margin: 0 10px;
-		font-size: 25px;
+		margin: 0 6px;
+		font-size: 20px;
 	}
 }
 @media (min-width: 1200px) {
 	.tabs div {
-		margin: 0 15px;
-		font-size: 30px;
+		margin: 0 10px;
+		font-size: 25px;
 	}
 }
 
@@ -152,8 +153,9 @@ header {
 		top: 20px;
 	}
 	.tabs div {
-		margin: 0 3px;
-		font-size: 16px;
+		margin: 0 5px;
+		font-size: 12px;
+		font-weight: 800;
 	}
 
 }
