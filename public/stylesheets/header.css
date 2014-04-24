@@ -109,19 +109,19 @@ header {
 @media (min-width: 768px) {
 	.tabs div {
 		margin: 0 5px;
-		font-size: 13px;
+		font-size: 12px;
 	}
 }
 @media (min-width: 992px) {
 	.tabs div {
 		margin: 0 6px;
-		font-size: 20px;
+		font-size: 19px;
 	}
 }
 @media (min-width: 1200px) {
 	.tabs div {
 		margin: 0 10px;
-		font-size: 25px;
+		font-size: 24px;
 	}
 }
 
