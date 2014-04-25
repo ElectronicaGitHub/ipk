@@ -40,7 +40,7 @@
 			<tr>
 				<th>Название</th>
 				<th>Синопсис</th>
-				<th>Тип</th>
+				<th>Жанр</th>
 				<th>Ссылка на фильм</th>
 				<th>Ссылка на картинку</th>
 				<th>Год</th>
@@ -52,7 +52,7 @@
 			<tr ng-repeat="film in films">
 				<td ng-bind="film.title"></td>
 				<td ng-bind="film.synopsis"></td>
-				<td bg-bind="film.type"></td>
+				<td ng-bind="film.genre"></td>
 				<td ng-bind="film.film_url"></td>
 				<td class="picture"><img src="{{film.picture_url}}"></td>
 				<td ng-bind="film.year"></td>
