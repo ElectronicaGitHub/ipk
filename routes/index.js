@@ -14,7 +14,8 @@ module.exports = function(app) {
 		if (req.user) {
 			console.log(req.user);
 		}
-		res.render('index');
+		// res.render('index');
+		res.render('nomoney')
 	});
 
 	app.get('/films', function (req ,res, err) {
