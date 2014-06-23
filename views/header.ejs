@@ -2,15 +2,33 @@
 
 <header>
 	<div class="logo">
-		<p>ART OF</p>
-		<p>CINEMA</p>
-		<p>PROMOTION</p>
+		<p class="animated bounceInDown" id="p_h_1">ART OF</p>
+		<p class="animated bounceInDown" id="p_h_2">CINEMA</p>
+		<p class="animated bounceInDown" id="p_h_3">PROMOTION</p>
 	</div>
-	<div class="tabs">
+	<div class="tabs" data-scroll-reveal="enter from bottom over 1s but wait .2s">
 		<%-blocks.header_tabs%>
 	</div>
-	<div class="contact"><i class="fa fa-phone"></i> +7(495) 665-48-37
-	</div>
+	<div class="contact animated bounceInDown"><i class="fa fa-phone"></i> +7(495) 665-48-37</div>
 
+<style>
+
+p[id*=p_h] {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+#p_h_3 {
+	-webkit-animation-delay: .3s;
+	animation-delay: .3s;
+}
+#p_h_2 {
+	-webkit-animation-delay: .2s;
+	animation-delay: .2s;
+}
+#p_h_1 {
+	-webkit-animation-delay: .1s;
+	animation-delay: .1s;
+}
+</style>
 
 </header>

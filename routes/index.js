@@ -46,7 +46,7 @@ module.exports = function(app) {
 		})
 	})
 
-	app.get('/admin', function (req, res, next) {
+	app.get('/sobakakowka', function (req, res, next) {
 		var data = {};
 		var el = {};
 		if (Object.keys(req.query).length>0) {
@@ -79,7 +79,7 @@ module.exports = function(app) {
 		}
 	});
 
-	app.get('/admin/list', function (req, res, err) {
+	app.get('/sobakakowka/list', function (req, res, err) {
 		res.render('admin_panel');
 	})
 

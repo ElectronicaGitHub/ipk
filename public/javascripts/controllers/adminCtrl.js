@@ -64,7 +64,7 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 		$http.post(url, data)
 			.success(function (data) {
 				console.log('ВСЕ ОК ', data);
-				window.location.href = '/';
+				window.location.reload();
 			})
 			.error(function (data) {
 				console.log(data);
@@ -80,13 +80,13 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 		$http.post(url, data)
 			.success(function (data) {
 				console.log('ВСЕ ОК АПДЕЙТ ', data);
-				window.location.href = '/';
+				window.location.reload();
 			})
 			.error(function (data) {
 				console.log(data);
 			})
 	}
 	$scope.goToAll = function() {
-		window.location.href = '/admin/list';
+		window.location.href = '/sobakakowka/list';
 	}
 }])
