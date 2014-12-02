@@ -9,6 +9,7 @@
 .last-event-container {
 	position: relative;
 	margin-bottom: 10px;
+	height: 140px;
 	padding: 5px;
 	border: 1px dashed #e5e5e5;
 	overflow: hidden;
@@ -39,7 +40,7 @@
 }
 .last-event-container .title {
 	font-weight: 800;
-	font-size: 20px;
+	font-size: 16px;
 	line-height: 22px;
 	margin-bottom: 10px;
 }
@@ -47,6 +48,7 @@
 	min-height: 50px;
 	font-size: 15px;
 	line-height: 20px;
+	height: 100px;
 	padding-bottom: 10px;
 }
 .last-event-container .date {
@@ -55,6 +57,9 @@
 	bottom: 0px;
 	height: 20px;
 	font-weight: 600;
+}
+.films-container {
+	overflow: hidden;
 }
 .film-container {
 	width: 100%;
@@ -126,6 +131,30 @@
 	padding-right: 0;
 	padding-left: 0;
 }
+
+.loadMoreButton {
+	clear: both;
+	margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+}
+
+.loadMoreButton > span {
+	font-size: 20px;
+	font-family: 'Open Sans';
+	font-weight: 800;
+	padding: 10px 20px;
+	/*box-shadow: 0 1px 3px rgba(0,0,0,.3);*/
+	background-color: #f5f5f5;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.loadMoreButton > span:hover {
+	background-color: #e5e5e5;
+}
+
+
 @media (min-width: 768px) {
 	.film:nth-child(even) {
 		padding-left: 5px

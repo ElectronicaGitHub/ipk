@@ -1,9 +1,15 @@
 app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 
+	
 	$scope.init = function() {
+		$scope.loadButtonLabel = 'Загрузить больше фильмов';
+		$scope.stopLoadNews = false;
+		$scope.page = 1;
+		$scope.limit = 10;
 		$scope.last_new = {};
+		$scope.films = [];
 		$scope.getLastNew();
-		$scope.getFilms();
+		$scope.getFilms($scope.page);
 	}
 
 	$scope.selectOptions = {
@@ -15,11 +21,18 @@ app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 		'science' : 'Научно-популярные' 
 	}
 
-	$scope.getFilms = function() {
-		url = '/films/all';
+	$scope.getFilms = function(page) {
+		url = '/films/all?page=' + page;
+		$scope.loadButtonLabel = 'Загружаем ...'
 		$http.get(url)
 			.success(function (data) {
-				$scope.films = data;
+				if (data.length < $scope.limit) {
+					$scope.stopLoadNews = true;
+				} else {
+					$scope.loadButtonLabel = 'Загрузить больше фильмов'
+				}
+				$scope.films = $scope.films.concat(data);
+				$scope.page ++;
 				console.log('$scope.films = ', $scope.films);
 			})
 			.error(function (data) {
@@ -37,6 +50,10 @@ app.controller('indexCtrl', ['$scope', '$http', function ($scope, $http) {
 			.error(function (data) {
 				console.log(data)
 			})
+	}
+
+	$scope.loadMoreNews = function() {
+		$scope.getFilms($scope.page);
 	}
 
 }])

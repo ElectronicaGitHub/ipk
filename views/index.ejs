@@ -36,4 +36,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="loadMoreButton">
+		<span ng-show="stopLoadNews">Фильмов больше нет</span>
+		<span ng-show="!stopLoadNews" ng-click="loadMoreNews()">{{ loadButtonLabel }}</span>
+	</div>
 </div>	

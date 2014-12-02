@@ -2,6 +2,11 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
 	console.log($scope)
 
 	$scope.selectedFilmType = 'all';
+	$scope.page = 1;
+	$scope.limit = 10;
+	$scope.films = [];
+	$scope.loadButtonLabel = 'Загрузить больше фильмов';
+	$scope.stopLoadNews = false;
 
 	var width = $(window).width();
 	if (width > 753 && width < 977) {
@@ -56,10 +61,17 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
     }
 
 	$scope.getFilms = function() {
-		url = '/films/' + $scope.selectedFilmType;
+		url = '/films/' + $scope.selectedFilmType + '?page=' + $scope.page;
+		$scope.loadButtonLabel = 'Загружаем ...'
 		$http.get(url)
 			.success(function (data) {
-				$scope.films = data;
+				if (data.length < $scope.limit) {
+					$scope.stopLoadNews = true;
+				} else {
+					$scope.loadButtonLabel = 'Загрузить больше фильмов'
+				}
+				$scope.films = $scope.films.concat(data);
+				$scope.page++;
 				console.log('$scope.films = ', $scope.films);
 			})
 			.error(function (data) {

@@ -98,10 +98,18 @@ module.exports = function(app) {
 			res.json(result);
 		});
 	})
+
+
 	app.get('/films/:type', function (req, res, next) {
+		var limit = 10;
+		var page = req.query.page - 1;
+
 		var type = (req.params.type==='all') ? {} : {'genre':req.params.type};
-		var films = Film.find(type, {}, { 
-			sort : { $natural:-1 } 
+		var films = Film.find(type, {
+		}, { 
+			sort : { $natural:-1 },
+			limit : limit,
+			skip : page * limit
 		}).exec(function (err, result) {
 			res.json(result);
 		})
