@@ -34,7 +34,7 @@ app.controller('adminListCtrl', ['$scope', '$http',  function ($scope, $http) {
 	$scope.delete = function(data, type) {
 		console.log(type);
 		console.log(data);
-		url = '/sobakakowka/' + type + '/' + data._id;
+		url = '/admin/' + type + '/' + data._id;
 		console.log(url);
 		$http.delete(url)
 			.success(function (data) {
