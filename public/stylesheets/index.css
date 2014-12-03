@@ -134,7 +134,7 @@
 
 .loadMoreButton {
 	clear: both;
-	margin-top: 20px;
+	margin: 20px 0;
 	padding: 20px;
 	text-align: center;
 }
