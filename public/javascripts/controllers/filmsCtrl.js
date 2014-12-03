@@ -78,8 +78,15 @@ app.controller('filmsCtrl', ['$scope', '$http', '$sce', function ($scope, $http,
 				console.log(data)
 			})
 	}
+
+	$scope.loadMoreNews = function() {
+		$scope.getFilms();
+	}
+
 	$scope.setSelectedFilm = function(type) {
 		$scope.selectedFilmType = type;
+		$scope.page = 1;
+		$scope.films = [];
 		$scope.getFilms();
 	}
 }])
