@@ -22,21 +22,23 @@
 			 ng-class="{ 'selected-film' : selectedFilmType===k}">{{ v }}</div>
 	</div>
 
+	
 	<div class="film" 
 		 ng-repeat="film in films">
-		<div class="m title" ng-bind="film.title"></div>
-		<div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 iframe-container">
-			<iframe ng-src="{{frameSrc(film.film_url)}}" width="100%" height="100%" frameborder allowfullscreen></iframe>
-		</div>
-		<div class="col-xs-0 col-sm-6 col-md-5 col-lg-5 info-container">
-			<div class="title" ng-bind="film.title"></div>
-			<div ng-show="film.genre" class="genre">Жанр: {{ selectOptions[film.genre] }}</div>
-			<span ng-show="film.time" class="time">Продолжительность: {{ film.time }}</span>
-			<!-- <span class="year" >Год выпуска: {{film.year }} </span> -->
-			<div ng-show="film.synopsis" class="synopsis">{{ film.synopsis | cut:true:cutNumber:'...'}}</div>
+		<a href="/film/{{film._id}}">
+			<div class="m title" ng-bind="film.title"></div>
+			<div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 iframe-container">
+				<iframe ng-src="{{frameSrc(film.film_url)}}" width="100%" height="100%" frameborder allowfullscreen></iframe>
+			</div>
+			<div class="col-xs-0 col-sm-6 col-md-5 col-lg-5 info-container">
+				<div class="title" ng-bind="film.title"></div>
+				<div ng-show="film.genre" class="genre">Жанр: {{ selectOptions[film.genre] }}</div>
+				<span ng-show="film.time" class="time">Продолжительность: {{ film.time }}</span>
+				<!-- <span class="year" >Год выпуска: {{film.year }} </span> -->
+				<div ng-show="film.synopsis" class="synopsis">{{ film.synopsis | cut:true:cutNumber:'...'}}</div>
 
-		</div>
-
+			</div>
+		</a>
 	</div>
 
 	<div class="loadMoreButton">
