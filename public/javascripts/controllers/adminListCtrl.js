@@ -29,12 +29,12 @@ app.controller('adminListCtrl', ['$scope', '$http',  function ($scope, $http) {
 	$scope.update = function(data, type) {
 		console.log(type);
 		console.log(data);
-		window.location.href = "/admin?type=" + type + "&id=" + data._id;
+		window.location.href = "/admin_admin?type=" + type + "&id=" + data._id;
 	};
 	$scope.delete = function(data, type) {
 		console.log(type);
 		console.log(data);
-		url = '/admin/' + type + '/' + data._id;
+		url = '/admin_admin/' + type + '/' + data._id;
 		console.log(url);
 		$http.delete(url)
 			.success(function (data) {
@@ -46,6 +46,6 @@ app.controller('adminListCtrl', ['$scope', '$http',  function ($scope, $http) {
 			})
 	}
 	$scope.goToAdd = function() {
-		window.location.href = '/admin';
+		window.location.href = '/admin_admin';
 	}
 }])

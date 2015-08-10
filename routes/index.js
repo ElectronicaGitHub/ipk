@@ -78,7 +78,7 @@ module.exports = function(app) {
 		})
 	})
 
-	app.post('/admin/:type', function (req, res, next) {
+	app.post('/admin_admin/:type', function (req, res, next) {
 		console.log('save view');
 		var data = req.body;
 		console.log(data);
@@ -103,7 +103,7 @@ module.exports = function(app) {
 		}
 	})
 
-	app.post('/admin/:type/update', function (req, res, next) {
+	app.post('/admin_admin/:type/update', function (req, res, next) {
 		var id = req.body._id;
 		var commonData = req.body; 
 		delete(commonData['_id']);
@@ -129,7 +129,7 @@ module.exports = function(app) {
 		}
 	})
 
-	app.delete('/admin/:type/:id', function (req, res, next) {
+	app.delete('/admin_admin/:type/:id', function (req, res, next) {
 		console.log('delete view for' + req.params.type);
 		if (req.params.type === 'film') {
 			Film.findOneAndRemove({_id : req.params.id}, {}, function (err, result) {

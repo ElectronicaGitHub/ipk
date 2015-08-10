@@ -57,9 +57,9 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 	$scope.save = function(data, type) {
 		console.log(data);
 		if (type === 'film') {
-			url = '/admin/film';
+			url = '/admin_admin/film';
 		} else {
-			url = '/admin/event';
+			url = '/admin_admin/event';
 		}
 		$http.post(url, data)
 			.success(function (data) {
@@ -73,9 +73,9 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 	$scope.update = function(data, type) {
 		console.log(data);
 		if (type === 'film') {
-			url = '/admin/film/update';
+			url = '/admin_admin/film/update';
 		} else {
-			url = '/admin/event/update';
+			url = '/admin_admin/event/update';
 		}
 		$http.post(url, data)
 			.success(function (data) {
@@ -87,6 +87,6 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 			})
 	}
 	$scope.goToAll = function() {
-		window.location.href = '/admin/list';
+		window.location.href = '/admin_admin/list';
 	}
 }])
