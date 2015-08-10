@@ -146,7 +146,7 @@ module.exports = function(app) {
 		}
 	})
 
-	app.use(function(req, res, next) {
+	app.use('/admin', function(req, res, next) {
 	    var auth;
 	    console.log('middleware just in admin view');
 	    if (req.headers.authorization) {
