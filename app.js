@@ -35,19 +35,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
-// var MongoStore = require('connect-mongo')(express);
-
-// app.use(express.session( {
-//     secret : config.get('session:secret'),
-//     key : config.get('session:key'),
-//     cookie : config.get('session:cookie'),
-//     store: new MongoStore({mongoose_connection : mongoose.connection})
-// }));
 
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
-require('./routes')(app);
+
+app.use('/', require('./routes/index.js')(app);
+app.use('/admin', require('./routes/admin.js')(app));
+
 
 /// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
