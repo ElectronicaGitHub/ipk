@@ -40,7 +40,7 @@ app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-app.use('/', require('./routes/index.js')(app);
+app.use('/', require('./routes/index.js')(app));
 app.use('/admin', require('./routes/admin.js')(app));
 
 
