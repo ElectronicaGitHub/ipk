@@ -1,4 +1,8 @@
-module.exports = function () {
+var Event = require('../models/event').Event,
+	Film = require('../models/film').Film,
+	passport = require('passport');
+
+module.exports = function (app) {
 	app.use(function(req, res, next) {
 	    var auth;
 	    console.log('middleware just in admin view');
