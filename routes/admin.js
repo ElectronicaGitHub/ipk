@@ -3,7 +3,7 @@ var Event = require('../models/event').Event,
 	passport = require('passport');
 
 module.exports = function (app, config) {
-	
+
 	app.use(function(req, res, next) {
 	    var auth;
 	    console.log('middleware just in admin view');
@@ -24,10 +24,10 @@ module.exports = function (app, config) {
 	    }
 	});
 
-	app.get('/', function (req, res, next) {
+	app.get('/admin', function (req, res, next) {
 		var data = {};
 		var el = {};
-		if (Object.keys(req.query).length>0) {
+		if (Object.keys(req.query).length > 0) {
 			if (req.query.type==='film') {
 				el = Film.find({_id : req.query.id })
 				data = {
@@ -57,7 +57,7 @@ module.exports = function (app, config) {
 		}
 	});
 
-	app.get('/list', function (req, res, err) {
+	app.get('/admin/list', function (req, res, err) {
 		res.render('admin_panel');
 	})
 }
