@@ -29,7 +29,7 @@ app.controller('adminListCtrl', ['$scope', '$http',  function ($scope, $http) {
 	$scope.update = function(data, type) {
 		console.log(type);
 		console.log(data);
-		window.location.href = "/sobakakowka?type=" + type + "&id=" + data._id;
+		window.location.href = "/admin?type=" + type + "&id=" + data._id;
 	};
 	$scope.delete = function(data, type) {
 		console.log(type);
@@ -46,6 +46,6 @@ app.controller('adminListCtrl', ['$scope', '$http',  function ($scope, $http) {
 			})
 	}
 	$scope.goToAdd = function() {
-		window.location.href = '/sobakakowka';
+		window.location.href = '/admin';
 	}
 }])

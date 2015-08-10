@@ -14,12 +14,16 @@
 		}
 	},
 	"session" : {
-		"secret" : "ILoveNastyulechku",
+		"secret" : "IPKIPKIPK",
 		"key" : "sid",
 		"cookie" : {
 			"path" : "/",
 			"httpOnly" : true,
 			"maxAge" : null
 		}
+	},
+	"autentification": {
+		"username" : "admin",
+		"password" : "ipk12345ipk"
 	}
 }

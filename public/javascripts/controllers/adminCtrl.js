@@ -87,6 +87,6 @@ app.controller('adminCtrl', ['$scope', '$http', function ($scope, $http) {
 			})
 	}
 	$scope.goToAll = function() {
-		window.location.href = '/sobakakowka/list';
+		window.location.href = '/admin/list';
 	}
 }])
