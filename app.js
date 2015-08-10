@@ -40,9 +40,8 @@ app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-app.get('/', require('./routes/index.js')(app));
-app.get('/admin', require('./routes/admin.js')(app, config));
-
+require('./routes/index.js')(app);
+require('./routes/admin.js')(app, config);
 
 /// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
